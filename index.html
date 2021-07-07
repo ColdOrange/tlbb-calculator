@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天龙八部属性伤害计算器</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script type="text/javascript" src="index.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2 class="header">天龙八部属性伤害计算器</h2>
+    <!-- 门派 -->
+    <div class="box">
+      <table>
+        <tr>
+          <td><label for="job-select">门派</label></td>
+          <td>
+            <select id="job-select">
+              <option value="MJ">明教</option>
+              <option value="SL">少林</option>
+              <option value="GB">丐帮</option>
+              <option value="TS">天山</option>
+              <option value="WD">武当</option>
+              <option value="EM">峨眉</option>
+              <option value="XY">逍遥</option>
+              <option value="XX">星宿</option>
+              <option value="TL">天龙</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- 属性 -->
+    <div id="attributes" class="box">
+      <form>
+        <table>
+          <tr>
+            <td></td>
+            <td>属性</td>
+            <td>减抗</td>
+            <td>减抗下限</td>
+          </tr>
+          <tr class="attr-b">
+            <td>冰攻</td>
+            <td><input type="text" id="b-attack" placeholder="0"></td>
+            <td><input type="text" id="b-ignore-defense" placeholder="0"></td>
+            <td><input type="text" id="b-ignore-defense-limit" placeholder="0"></td>
+          </tr>
+          <tr class="attr-h">
+            <td>火攻</td>
+            <td><input type="text" id="h-attack" placeholder="0"></td>
+            <td><input type="text" id="h-ignore-defense" placeholder="0"></td>
+            <td><input type="text" id="h-ignore-defense-limit" placeholder="0"></td>
+          </tr>
+          <tr class="attr-x">
+            <td>玄攻</td>
+            <td><input type="text" id="x-attack" placeholder="0"></td>
+            <td><input type="text" id="x-ignore-defense" placeholder="0"></td>
+            <td><input type="text" id="x-ignore-defense-limit" placeholder="0"></td>
+          </tr>
+          <tr class="attr-d">
+            <td>毒攻</td>
+            <td><input type="text" id="d-attack" placeholder="0"></td>
+            <td><input type="text" id="d-ignore-defense" placeholder="0"></td>
+            <td><input type="text" id="d-ignore-defense-limit" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>修炼增加</td>
+            <td></td>
+          </tr>
+          <tr class="attr-w">
+            <td>外攻</td>
+            <td><input type="text" id="w-attack" placeholder="0"></td>
+            <td><input type="text" id="w-attack-extra" placeholder="0"></td>
+          </tr>
+          <tr class="attr-n">
+            <td>内攻</td>
+            <td><input type="text" id="n-attack" placeholder="0"></td>
+            <td><input type="text" id="n-attack-extra" placeholder="0"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!-- 对手 -->
+    <div id="enemy" class="box">
+      <form>
+        <table>
+          <tr>
+            <td><label for="enemy-select">对手</label></td>
+            <td>
+              <select id="enemy-select">
+                <option value="custom">自定义</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="enemy-type">类型</label></td>
+            <td>
+              <select id="enemy-type">
+                <option value="monster">怪物</option>
+                <option value="person">玩家</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>冰抗</td>
+            <td><input type="text" id="b-defense" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>火抗</td>
+            <td><input type="text" id="h-defense" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>玄抗</td>
+            <td><input type="text" id="x-defense" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>毒抗</td>
+            <td><input type="text" id="d-defense" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>外防</td>
+            <td><input type="text" id="w-defense" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>内防</td>
+            <td><input type="text" id="n-defense" placeholder="0"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!-- 伤害计算按钮 -->
+    <div class="box">
+      <button id="submit">伤害计算</button>
+    </div>
+    <!-- 伤害计算结果 -->
+    <div class="box">
+      <p class="header">伤害计算结果</p>
+      <hr>
+      <table>
+        <tr>
+          <td>冰属性伤害：</td>
+          <td id="b-damage">0</td>
+        </tr>
+        <tr>
+          <td>火属性伤害：</td>
+          <td id="h-damage">0</td>
+        </tr>
+        <tr>
+          <td>玄属性伤害：</td>
+          <td id="x-damage">0</td>
+        </tr>
+        <tr>
+          <td>毒属性伤害：</td>
+          <td id="d-damage">0</td>
+        </tr>
+        <tr>
+          <td>外功伤害：</td>
+          <td id="w-damage">0</td>
+        </tr>
+        <tr>
+          <td>内功伤害：</td>
+          <td id="n-damage">0</td>
+        </tr>
+        <tr>
+          <td>总伤害：</td>
+          <td id="total-damage">0</td>
+        </tr>
+        <tr>
+          <td>总伤害（暴击）：</td>
+          <td id="total-critical-damage">0</td>
+        </tr>
+      </table>
+      <hr>
+      <table>
+        <tr>
+          <td>客户端显示伤害：</td>
+        </tr>
+        <tr>
+          <td id="show-damage" class="show-result"><br></td>
+        </tr>
+        <tr>
+          <td>客户端显示伤害（暴击）：</td>
+        </tr>
+        <tr>
+          <td id="show-critical-damage" class="show-result critical"><br></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

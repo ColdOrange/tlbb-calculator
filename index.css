@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "SimSun", "STSong", serif;
+}
+
+html {
+  background-color: whitesmoke;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+td:first-child {
+  width: 0.1rem;  /* width:0 not work on some browsers */
+  white-space: nowrap;
+  padding-right: 0.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 1.6rem;
+  padding-left: 5px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+}
+
+select {
+  width: 100%;
+  height: 1.8rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+@media (hover: none) {
+  button:hover {
+    background-color: whitesmoke;
+  }
+}
+
+button:active {
+  background-color: gray;
+}
+
+hr {
+  margin-top: 5px;
+  border: 1px dashed lightgray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem auto;
+  width: calc(100% - 2rem);
+  max-width: 500px;
+}
+
+.box {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.attr-b input {
+  background-color: #eeeeff;
+}
+
+.attr-h input {
+  background-color: #ffeeee;
+}
+
+.attr-x input {
+  background-color: #ffffee;
+}
+
+.attr-d input {
+  background-color: #eeffee;
+}
+
+.attr-w input {
+  background-color: #fffeef;
+}
+
+.attr-n input {
+  background-color: #eeffff;
+}
+
+.show-result {
+  color: #ed310c;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 2px #fadc07;
+}
+
+.show-result.critical {
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px #fadc07;
+}
