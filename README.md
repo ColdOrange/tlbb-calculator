@@ -1,5 +1,7 @@
 ## TLBB Calculator
 
-An [Online Game](http://tlhj.changyou.com/main.shtml) damage calculator. I wrote it while playing this game and learning css :)
+[Demo](https://coldorange.github.io/tlbb-calculator)
 
-[天龙八部怀旧版](http://tlhj.changyou.com/main.shtml)属性伤害计算器。
+An Online Game damage calculator. I wrote it while playing this game and learning css :)
+
+天龙八部怀旧版属性伤害计算器。
